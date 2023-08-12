@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div class="bg"></div>
+        <header>
+            <a href="#" class="logo">Logo</a>
+            <ul class="navigation">
+                <li><a href="#" class="active">Inicio</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Novidades</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textbox">
+                <h2>Hambúrguer</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde sapiente quia consequatur suscipit quod accusantium nam fugit iste, dicta cumque minima voluptatibus, et voluptates, vel excepturi blanditiis sequi. Nihil vitae exercitationem ab voluptate porro?</p>
+                <a href="#">Saiba Mais</a>
+            </div>
+            <div class="imgBox">
+                <img src="img/hamburguer.png" width="500" class="comida">
+            </div>
+        </div>
+        <ul class="thumb">
+        <li data-text="Hambúrguer" class="active"><img src="img/hamburguer.png" onclick="imgSlider('img/hamburguer.png')"></li>
+          <li data-text="Hambúrguer 2"><img src="img/burguer2.png" onclick="imgSlider('img/burguer2.png')"></li>
+          <li data-text="Hambúrguer 3"><img src="img/burguer3.png" onclick="imgSlider('img/burguer3.png')"></li>
+          <li data-text="Hambúrguer Vegano"><img src="img/burguerveg.png" onclick="imgSlider('img/burguerveg.png')"></li>
+          <li data-text="Batata Frita"><img src="img/fritas2.png" onclick="imgSlider('img/fritas2.png')"></li>
+          <li data-text="Bebidas"><img src="img/refri2.png" onclick="imgSlider('img/refri2.png')"></li> 
+        </ul>
+    </section>
+
+    <script>
+        //change image on click
+        function imgSlider(anything){
+            document.querySelector('.comidas').scr = anything;
+        }
+
+        //add active class in selected thumbnails
+        let el = document.querySelectorAll('.thumb li');
+        for (let i = 0; i < el.length; i++){
+            el[i].onclick = function(){
+                var c = 0;
+                while (c < el.length){
+                    el[c++].className = 'check';
+                }
+                el[i].className = 'check active';
+            }
+        }
+    </script>
+</body>
+</html>
